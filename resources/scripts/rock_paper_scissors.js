@@ -52,15 +52,15 @@ class RockPaperScissors {
     if (winner === "win"){
       winner = this.username;
       this.score.user++;} 
-    if (winner === "lose") {
+    else if (winner === "lose") {
       winner = "CPU";
       this.score.cpu++;
     }
     else {
      winner = "No one";
     }
-
-    this.gameHistoryLog.push(this.username + ` selected` + userSelection + `, Cpu selected ` + cpuSelection + ` : ` + winner + ` wins`);
+    const logString = `${this.username} selected ${userSelection} , CPU selected ${cpuSelection} : ${winner} wins.`;
+    this.gameHistoryLog.push(logString);
   }
 
 }
