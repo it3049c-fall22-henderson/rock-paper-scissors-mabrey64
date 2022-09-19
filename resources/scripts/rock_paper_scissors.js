@@ -37,9 +37,9 @@ class RockPaperScissors {
       return "tie";
     }
     if (userSelection === `rock` && cpuSelection === `scissors` || userSelection === `scissors` && cpuSelection === `paper` || userSelection === `paper` && cpuSelection === `rock`){
-      return "win" }
-    else {
-      return "lose"
+      return "win"; 
+    } else {
+      return "lose";
     }
   }
   /**
@@ -47,14 +47,20 @@ class RockPaperScissors {
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
   play(userSelection){
-    cpuSelection = generateCPUResponse(acceptedValue);
-    let winner = determineWinner(userSelection, cpuSelection);
+    let cpuSelection = this.generateCPUResponse();
+    let winner = this.determineWinner(userSelection, cpuSelection);
     if (winner === "win"){
+      winner = this.username;
       this.score.user++;} 
     if (winner === "lose") {
+      winner = "CPU";
       this.score.cpu++;
     }
-    this.gameHistoryLog.push(this.username + `selected` + this.userSelection + `, Cpu selected ` + this.cpuSelection + ` : ` + this.username + ` wins`);
+    else {
+     winner = "No one";
+    }
+
+    this.gameHistoryLog.push(this.username + ` selected` + userSelection + `, Cpu selected ` + cpuSelection + ` : ` + winner + ` wins`);
   }
 
 }
