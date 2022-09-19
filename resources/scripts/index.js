@@ -14,7 +14,7 @@ let game;
 
 
 // hide game screen
-//welcomeScreen.classList.remove(`d-none`);
+welcomeScreen.classList.remove(`d-none`);
 gameScreen.classList.add(`d-none`);
 
 
